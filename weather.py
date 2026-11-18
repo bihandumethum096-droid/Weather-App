@@ -10,13 +10,16 @@ def get_weather_info(latitude,longitude):
     parameters = {
 	"latitude": latitude,
 	"longitude": longitude,
-	"current": ["temperature_2m","rain","is_day"],
+	"current": ["temperature_2m","rain","is_day",
+               "wind_speed_10m","apparent_temperature","relative_humidity_2m"],
     "timezone":"auto"}
     
     response=requests.get(url,params=parameters,timeout=(0.5,10))
     response.raise_for_status()
     content=response.json()
     for result in content['current']:
+        if result=='interval':
+            continue
         print(f'* {result} => {content["current"][result]}')
     
 
