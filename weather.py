@@ -14,7 +14,7 @@ def get_weather_info(latitude,longitude):
                "wind_speed_10m","apparent_temperature","relative_humidity_2m"],
     "timezone":"auto"}
     
-    response=requests.get(url,params=parameters,timeout=(0.5,10))
+    response=requests.get(url,params=parameters,timeout=(5,10))
     response.raise_for_status()
     content=response.json()
     for result in content['current']:
@@ -33,7 +33,7 @@ def search_location(location):
         'format':'json'
                         }
 
-    response=requests.get(url,params=parameters,timeout=(0.5,10))                        
+    response=requests.get(url,params=parameters,timeout=(5,10))                        
     response.raise_for_status()
     content=response.json()
     info=content['results'][0]
