@@ -45,5 +45,5 @@ def main():
         else:
             print('-----GOOD BYE-----')
             break      
-
-main()
+if __name__=="__main__":
+    main()
