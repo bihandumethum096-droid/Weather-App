@@ -44,6 +44,7 @@ def main():
             continue
         else:
             print('-----GOOD BYE-----')
-            break      
-
-main()
+            break  
+                    
+if __name__=="__main__":
+    main()
