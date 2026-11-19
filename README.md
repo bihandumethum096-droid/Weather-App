@@ -35,7 +35,7 @@
     - Suitable text editor
     - Pyfiglet package
     - Requests package
-
+- Make sure that weather_api.py and weather_main.py are in the same directory, as weather_main.py imports weather_api.py as a module.
 ## USAGE
 
 - Once you have set the installations up, run the code using python interpreter and the text editor.
