@@ -1,4 +1,4 @@
-import requests,weatherAPI,sys
+import requests,weather_api,sys
 from pyfiglet import Figlet
 
 def welcome_msg():
@@ -29,8 +29,8 @@ def main():
     while True:
         location=take_user_input()
         try:
-            lat,long=weatherAPI.search_location(location)
-            weatherAPI.get_weather_info(lat,long)
+            lat,long=weather_api.search_location(location)
+            weather_api.get_weather_info(lat,long)
         except requests.HTTPError:
             print('http request failed')
         except requests.exceptions.Timeout:
@@ -43,7 +43,8 @@ def main():
         if quit_or_not():
             continue
         else:
-            sys.exit('-----GOOD BYE-----')
+            print('-----GOOD BYE-----')
+            sys.exit()
             
                     
 if __name__=="__main__":
