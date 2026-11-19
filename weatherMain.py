@@ -1,4 +1,4 @@
-import requests,weatherAPI
+import requests,weatherAPI,sys
 from pyfiglet import Figlet
 
 def welcome_msg():
@@ -43,8 +43,9 @@ def main():
         if quit_or_not():
             continue
         else:
-            print('-----GOOD BYE-----')
-            break  
+            sys.exit('-----GOOD BYE-----')
+            
                     
 if __name__=="__main__":
     main()
+
